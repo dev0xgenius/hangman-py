@@ -15,13 +15,10 @@ class Hangman():
     def find(self, guessed_letter):
         guessed_letter = guessed_letter.lower()
         
-        if guessed_letter in self.track_word:
+        if guessed_letter and guessed_letter in self.track_word:
             letter_pos = self.track_word.find(guessed_letter)
             self.guesses[letter_pos] = guessed_letter
             self.track_word = utils.swapchar(self.track_word, letter_pos, '_')
             
-            return {'pos' : letter_pos, 'updatedGuesses' : self.guesses}
+            return {'pos' : letter_pos}
         return False
-        
-    def end(self):
-        print("You won, crazy!!!")

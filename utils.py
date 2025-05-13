@@ -17,6 +17,6 @@ def pick_random_letter(word):
 
 def get_char(prompt):
     user_input = input(f'{prompt}> ')
-    while len(user_input) > 1:
+    while len(user_input) > 1 or len(user_input) == 0:
         user_input = input("one letter, allowed> ")
     return user_input
