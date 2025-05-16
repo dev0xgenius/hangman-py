@@ -6,7 +6,7 @@ class Hangman():
     def __init__(self, words):
         self.word = random.choice(words)
         self.attempts = len(self.word)
-        self.guesses = ['_' for i in range(self.attempts)]
+        self.guesses = ['_' for _ in range(self.attempts)]
         self.track_word = self.word[:]
         
     def isguesscomplete(self):
